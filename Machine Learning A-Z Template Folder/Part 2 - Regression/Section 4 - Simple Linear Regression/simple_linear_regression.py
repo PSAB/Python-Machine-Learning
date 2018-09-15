@@ -49,6 +49,14 @@ regressor.fit(X_train, Y_train)
 y_pred = regressor.predict(X_test)
 # Predictions are not always spot on because linear regression is being used. 
 
+# Visualizing the Traning set results
+plt.scatter(X_train, Y_train, color = 'red')
+plt.plot(X_train, regressor.predict(X_train), color = 'blue')
+plt.title('Salary vs Experience (Training Set)')
+plt.xlabel('Years of Experience')
+plt.ylabel('Salary')
+plt.show()
+
 
 
 
