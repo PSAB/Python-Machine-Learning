@@ -46,7 +46,8 @@ regressor = LinearRegression()
 regressor.fit(X_train, Y_train)
 # Now the model will learn the correlations of the training set once it is applied through the code above
 
-
+y_pred = regressor.predict(X_test)
+# Predictions are not always spot on because linear regression is being used. 
 
 
 
