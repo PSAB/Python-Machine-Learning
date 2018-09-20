@@ -18,11 +18,18 @@ X[:, 3] = labelencoder_X.fit_transform(X[:, 3])
 onehotencoder = OneHotEncoder(categorical_features = [3])
 X = onehotencoder.fit_transform(X).toarray()
 
+# Avoiding the dummy variable trap (deletes first column)
+X = X[:, 1:]
+# THis is taken care of in the background
+# But sometimes have to do it manually
+
 
 # Splitting the dataset into the Training set and Test set
+# Try putting 10 observations in test set and 40 observations in training set:
 from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 
+# sklearn takes care of feature scaling in the background
 # Feature Scaling
 """from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
