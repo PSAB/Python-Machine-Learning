@@ -44,7 +44,10 @@ from sklearn.linear_model import LinearRegression
 regressor = LinearRegression()
 # Fit the regressor to the training set
 regressor.fit(X_train, y_train)
+# Now the model will learn the correlations of the training set
 
+# Predicting the test set results
+y_pred = regressor.predict(X_test)
 
 
 
