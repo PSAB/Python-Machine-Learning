@@ -58,10 +58,26 @@ X = np.append(arr = np.ones((50, 1)).astype(int), values = X, axis = 1)
 # Create new matrix of OPTIMAL features
 # Contains only independent variables that are statistically significant to the dependent variable
 # BACKWARD ELIMINATION STARTS HERE
-# Create new regressoe variable that utilizes statsmodels
+# Create new regressor variable that utilizes statsmodels
 # OLS: Ordinary Least Squares
 X_opt = X[:, [0, 1, 2, 3, 4, 5]]
 regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
-
-
+# Use SUMMARY function to access P value
+regressor_OLS.summary()
+X_opt = X[:, [0, 1, 3, 4, 5]]
+regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
+# Use SUMMARY function to access P value
+regressor_OLS.summary()
+X_opt = X[:, [0, 3, 4, 5]]
+regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
+# Use SUMMARY function to access P value
+regressor_OLS.summary()
+X_opt = X[:, [0, 3, 5]]
+regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
+# Use SUMMARY function to access P value
+regressor_OLS.summary()
+X_opt = X[:, [0, 3]]
+regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
+# Use SUMMARY function to access P value
+regressor_OLS.summary()
 
