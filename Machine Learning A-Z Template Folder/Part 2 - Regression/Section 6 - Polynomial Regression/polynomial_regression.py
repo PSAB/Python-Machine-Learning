@@ -39,12 +39,24 @@ lin_reg.fit(X, y)
 
 # Fitting multiple linear regression to the dataset
 from sklearn.preprocessing import PolynomialFeatures
-# Create an instance of Polynomial Features only up to second degree (exponent)
-# [p;y_reg is the variable that is being trained with given data
+# Create an instance of Polynomial Features regressor only up to second degree (exponent)
+# poly_reg is the variable that is being trained with given data
 poly_reg = PolynomialFeatures(degree = 2)
 # Fit the Modified X feature data regresion onto a new variable called X_poly
 X_poly = poly_reg.fit_transform(X)
 lin_reg_2 = LinearRegression()
 lin_reg_2.fit(X_poly, y)
+
+# Visualizing the linear regression results
+plt.scatter(X, y, color = 'red')
+plt.plot(X, lin_reg.predict(X), color = 'blue')
+plt.title('Truth of the Salaries (Linear Regression)')
+plt.xlabel('Position level')
+plt.ylabel('Salary')
+plt.show()
+
+# Visualizing the polynomial regression results
+
+
 
 
